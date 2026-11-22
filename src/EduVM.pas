@@ -20,10 +20,10 @@ const
     UnknownParamErr =  'Error: Unknown param';
     NoTestModeParam = 'Error: program requires "test" param"';   
     WrongCommandErr = 'Error: wrong command';
-    NoOperandErr = 'Error: command requires an operand';
+    NoOperandErr = 'Error: expected an operand after command';
     WrongOperandErr = 'Error: operand type is not eligible';
-    UnexpectedOperandErr = 'Error: No operand requires by command';
-    TooMuchOperandsErr = 'Error: command requires only one operand';
+    UnexpectedOperandErr = 'Error: unexpected operand after command';
+    TooMuchOperandsErr = 'Error: expected 1 operand after command';
     UnexpectedSymb = 'Error: unexpected symbol';
 
     SpaceCharCode = 32;
@@ -118,7 +118,7 @@ begin
         tokensCount := tokensCount + 1;
         if tokensCount > tokensCountInCommand then
         begin
-            writeln(TooMuchOperandsErr, ' in line ', CurrLineNum);
+            writeln(TooMuchOperandsErr, command,' in line ', CurrLineNum);
             halt(1)
         end else if tokensCount = 1 then
             command := token
