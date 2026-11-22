@@ -1,0 +1,4 @@
+push 540
+lods
+stos 100
+xor 12

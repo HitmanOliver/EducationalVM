@@ -1,0 +1,6 @@
+
+    push    1024
+
+	lods	
+  stos   0  
+		xor		255
